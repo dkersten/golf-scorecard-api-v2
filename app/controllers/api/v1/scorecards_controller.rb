@@ -22,6 +22,12 @@ module Api
                 render json: scorecard.to_json
             end
 
+            def update
+                scorecard = Scorecard.find(params[:id])
+                scorecard.update(scorecard_params)
+                render json: scorecard.to_json
+            end
+
             def destroy
                 scorecard = Scorecard.find(params[:id])
                 scorecard.destroy
