@@ -2,19 +2,21 @@ class User < ApplicationRecord
 
     has_many :scorecards, -> { order('created_at ASC') }
 
-    def test
-        scorecards = self.scorecards
-        return scorecards
-    end
-
-    def holeNum
+    def holesPlayed
         scorecards = self.scorecards
         totalscores = []
-        f9Total = scorecards.map do |scorecard|
-            f9 = scorecard.id
-            f9
+        totalHoles = 0
+        scorecards.map do |scorecard|
+            if scorecard.f9_score != nil && scorecard.b9_score != nil
+                totalHoles = totalHoles + 18
+            elsif scorecard.f9_score != nil
+                totalHoles = totalHoles + 9
+            elsif
+                scorecard.b9_score != nil
+                totalHoles = totalHoles + 9
+            end
         end
-        return f9Total
+        totalHoles
     end
 
 end

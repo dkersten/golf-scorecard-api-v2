@@ -14,9 +14,9 @@ module Api
                 render json: {blah: user.test}
             end
 
-            def holeNum
+            def holesPlayed
                 user = User.find_by(id: 1)
-                render json: {holeTotal: user.holeNum}
+                render json: {holeTotal: user.holesPlayed}
             end
         
             def show
