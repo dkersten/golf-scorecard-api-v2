@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     
     namespace :v1 do
 
-      get '/holes_played', to: 'users#holesPlayed'
+      # get '/users/:id/holes_played', to: 'users#holesPlayed'
 
       resources :users
     end
