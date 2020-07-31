@@ -6,6 +6,11 @@ module Api
                 users = User.all
                 render json: users.to_json
             end
+
+            def test
+                user = User.find_by(params[:id])
+                render json: {blah: user.test}
+            end
         
             def show
                 user = User.find(params[:id])

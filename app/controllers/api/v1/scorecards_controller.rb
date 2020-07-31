@@ -10,6 +10,7 @@ module Api
 
             def show
                 scorecard = Scorecard.find(params[:id])
+                # render json: scorecard.to_json(include: methods: [:test])
                 render json: scorecard.to_json
             end
 
