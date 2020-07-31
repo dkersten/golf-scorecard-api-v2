@@ -5,7 +5,16 @@ class User < ApplicationRecord
     def test
         scorecards = self.scorecards
         return scorecards
-        # return "Fuck I think I have this"
+    end
+
+    def holeNum
+        scorecards = self.scorecards
+        totalscores = []
+        f9Total = scorecards.map do |scorecard|
+            f9 = scorecard.id
+            f9
+        end
+        return f9Total
     end
 
 end

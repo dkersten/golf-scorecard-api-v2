@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     namespace :v1 do
 
       get '/test', to: 'users#test'
+      get '/holeNum', to: 'users#holeNum'
 
       resources :users
     end

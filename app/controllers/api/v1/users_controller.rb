@@ -8,8 +8,15 @@ module Api
             end
 
             def test
-                user = User.find_by(params[:id])
+                # user = User.find_by(params[:id])
+                # figure out how to do this dynamically
+                user = User.find_by(id: 3)
                 render json: {blah: user.test}
+            end
+
+            def holeNum
+                user = User.find_by(id: 1)
+                render json: {holeTotal: user.holeNum}
             end
         
             def show
