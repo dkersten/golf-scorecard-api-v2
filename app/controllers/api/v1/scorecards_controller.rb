@@ -20,17 +20,21 @@ module Api
 
             def create
                 scorecard = Scorecard.create(scorecard_params)
+                # scorecard = Scorecard.create(scorecard_params :user_id user_id)
                 render json: scorecard.to_json
             end
 
             def update
                 scorecard = Scorecard.find(params[:id])
+                    # if scorecard.user_id != user_id throw an exepction
                 scorecard.update(scorecard_params)
                 render json: scorecard.to_json
             end
 
             def destroy
                 scorecard = Scorecard.find(params[:id])
+                # if scorecard.user_id != user_id throw an exepction
+
                 scorecard.destroy
                 render json: {message: "Scorecard deleted"}
             end

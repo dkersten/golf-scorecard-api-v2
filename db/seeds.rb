@@ -3,8 +3,8 @@
 #
 
 
-# User.destroy_all
-# Scorecard.destroy_all
+User.destroy_all
+Scorecard.destroy_all
 
 # Users
 # User.create(first_name: "Liz", last_name: "Lemon", email: "llemon@nbc.com", password_digest: "123");
