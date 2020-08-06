@@ -1,0 +1,19 @@
+{
+  "name": "golf-scorecard-api-v2",
+  "version": "1.0.0",
+  "description": "Golf Scorecard backend API",
+  "main": "index.js",
+  "repository": "git@github.com:dkersten/golf-scorecard-api-v2.git",
+  "author": "dkersten <dkersten1994@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "cd client && yarn install && yarn build && cd ..",
+    "deploy": "cp -a client/build/. public/",
+    "postinstall": "yarn build && yarn deploy && echo 'Client built!'"
+  },
+  "engines": {
+    "yarn": "1.22.4",
+    "npm": "6.14.7",
+    "node": "13.12.0"
+  }
+}
