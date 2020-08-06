@@ -80,6 +80,9 @@ test:
 #
 production:
   <<: *default
+  adapter: postgresql
   database: golf_scorecard_api_v2_production
+  pool: 5
+  timeout: 5000
   username: golf_scorecard_api_v2
   password: <%= ENV['GOLF_SCORECARD_API_V2_DATABASE_PASSWORD'] %>
