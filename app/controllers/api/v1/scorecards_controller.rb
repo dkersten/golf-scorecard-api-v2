@@ -26,15 +26,18 @@ module Api
 
             def update
                 scorecard = Scorecard.find(params[:id])
-                    # if scorecard.user_id != user_id throw an exepction
+                # if scorecard.user_id !== user_id
+                #     raise "You do not have access"
+                # end
                 scorecard.update(scorecard_params)
                 render json: scorecard.to_json
             end
 
             def destroy
                 scorecard = Scorecard.find(params[:id])
-                # if scorecard.user_id != user_id throw an exepction
-
+                # if scorecard.user_id !== user_id
+                #     raise "You do not have access"
+                # end
                 scorecard.destroy
                 render json: {message: "Scorecard deleted"}
             end

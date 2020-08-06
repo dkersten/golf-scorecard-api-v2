@@ -47,13 +47,15 @@ module Secured
     end
   
     def user_id
-        user = User.find_by(auth0ID: auth_token[0]["email"])
-
+        # if User.find_by(auth0ID: auth_token[0]["email"])
+        # end
+        user = User.find_by(auth_id: auth_token[0]["email"])
+        # user = User.find_by(auth0ID: auth_token[0]["email"])
         if user 
-            user.id
+            return user.id
         else
-            user = User.create(auth0ID: auth_token[0]["email"])
-            user.id
+            user = User.create(auth_id: auth_token[0]["email"])
+            return user.id
         end
     end
 

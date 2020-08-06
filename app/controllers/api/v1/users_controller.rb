@@ -13,7 +13,7 @@ module Api
             #     # figure out how to do this dynamically
             #     user = User.find_by(id: 3)
             #     render json: {blah: user.test}
-            # end
+            # edn
 
             # def holesPlayed
             #     user = User.find(params[:id])
